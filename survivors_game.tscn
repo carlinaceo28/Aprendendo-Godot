@@ -25,6 +25,17 @@ offset_bottom = 1104.0
 position = Vector2(904, 531)
 scale = Vector2(0.987082, 1.01699)
 
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-915.831, -522.127)
+scale = Vector2(1.01309, 0.98329)
+curve = SubResource("Curve2D_07k8o")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(52.1772, -55.4894)
+rotation = -0.00271615
+progress = 180.18
+
 [node name="PineTree" parent="." instance=ExtResource("2_jts88")]
 position = Vector2(347, 501)
 scale = Vector2(1.02869, 0.895748)
@@ -44,11 +55,38 @@ position = Vector2(1484, 479)
 [node name="PineTree6" parent="." instance=ExtResource("2_jts88")]
 position = Vector2(1225, 760)
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_07k8o")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+[node name="GamerOVer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
-position = Vector2(52.1772, -55.4894)
-rotation = -0.00271615
-progress = 180.18
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GamerOVer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="Label" type="Label" parent="GamerOVer/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -11.5
+offset_right = 48.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "GAME OVER!
+"
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
