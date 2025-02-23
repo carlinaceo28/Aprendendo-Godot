@@ -6,3 +6,7 @@ res://survivors_game.tscn
 res://pine_tree.tscn
 res://slime_mob.gd
 res://slime_mob.tscn
+res://player_gun.tscn
+res://player_gun.gd
+res://bullet.gd
+res://bullet.tscn
