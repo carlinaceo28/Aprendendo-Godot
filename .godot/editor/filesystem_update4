@@ -10,3 +10,4 @@ res://player_gun.tscn
 res://player_gun.gd
 res://bullet.gd
 res://bullet.tscn
+res://survivors_game.gd
