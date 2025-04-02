@@ -1,13 +1,6 @@
-res://Player.tscn
-res://characters/happy_boo/happy_boo.gd
-res://player.gd
-res://characters/happy_boo/happy_boo.tscn
 res://survivors_game.tscn
-res://pine_tree.tscn
-res://slime_mob.gd
-res://slime_mob.tscn
-res://player_gun.tscn
 res://player_gun.gd
-res://bullet.gd
-res://bullet.tscn
-res://survivors_game.gd
+res://heart.tscn
+res://player.gd
+res://heart.gd
+res://Player.tscn

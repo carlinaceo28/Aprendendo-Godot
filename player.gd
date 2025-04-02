@@ -24,3 +24,9 @@ func _physics_process(delta):
 		if health <= 0.0:
 			health_depleted.emit()
 			
+
+func heal():
+	health += 10.0
+	if health > 100.0:
+		health = 100.0
+	%ProgressBar.value = health

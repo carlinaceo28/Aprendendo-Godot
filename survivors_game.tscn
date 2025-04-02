@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://6n5ip4a2g2vp"]
+[gd_scene load_steps=6 format=3 uid="uid://6n5ip4a2g2vp"]
 
 [ext_resource type="Script" path="res://survivors_game.gd" id="1_5q4j8"]
 [ext_resource type="PackedScene" uid="uid://7hyj8h5cbpgw" path="res://Player.tscn" id="1_kfqwi"]
 [ext_resource type="PackedScene" uid="uid://b5svcvhb3k4tn" path="res://pine_tree.tscn" id="2_jts88"]
+[ext_resource type="PackedScene" uid="uid://dju3jtjkn2a4v" path="res://heart.tscn" id="4_vp1f6"]
 
 [sub_resource type="Curve2D" id="Curve2D_07k8o"]
 _data = {
@@ -24,6 +25,7 @@ offset_bottom = 1104.0
 [node name="Player" parent="." instance=ExtResource("1_kfqwi")]
 position = Vector2(904, 531)
 scale = Vector2(0.987082, 1.01699)
+collision_layer = 9
 
 [node name="Path2D" type="Path2D" parent="Player"]
 position = Vector2(-915.831, -522.127)
@@ -87,6 +89,27 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 text = "GAME OVER!
 "
+
+[node name="heart" parent="." instance=ExtResource("4_vp1f6")]
+position = Vector2(697, 473)
+
+[node name="heart2" parent="." instance=ExtResource("4_vp1f6")]
+position = Vector2(1492, 861)
+
+[node name="heart3" parent="." instance=ExtResource("4_vp1f6")]
+position = Vector2(1738, 250)
+
+[node name="heart4" parent="." instance=ExtResource("4_vp1f6")]
+position = Vector2(216, 918)
+
+[node name="heart5" parent="." instance=ExtResource("4_vp1f6")]
+position = Vector2(187, 231)
+
+[node name="heart6" parent="." instance=ExtResource("4_vp1f6")]
+position = Vector2(2539, 223)
+
+[node name="heart7" parent="." instance=ExtResource("4_vp1f6")]
+position = Vector2(2713, 867)
 
 [connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
